@@ -1,5 +1,5 @@
 {
-  "name": "@payloadcms/db-postgres",
+  "name": "@payloadcms/db-postgres-patch",
   "version": "3.0.0-beta.42",
   "description": "The officially supported Postgres database adapter for Payload",
   "homepage": "https://payloadcms.com",
