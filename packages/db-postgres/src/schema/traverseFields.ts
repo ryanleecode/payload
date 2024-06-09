@@ -168,14 +168,14 @@ export const traverseFields = ({
             )
           }
         } else {
-          targetTable[fieldName] = varchar(columnName)
+          targetTable[fieldName] = varchar(columnName).default(field.defaultValue)
         }
         break
       }
       case 'email':
       case 'code':
       case 'textarea': {
-        targetTable[fieldName] = varchar(columnName)
+        targetTable[fieldName] = varchar(columnName).default(field.defaultValue)
         break
       }
 
@@ -197,14 +197,14 @@ export const traverseFields = ({
             )
           }
         } else {
-          targetTable[fieldName] = numeric(columnName)
+          targetTable[fieldName] = numeric(columnName).default(field.defaultValue)
         }
         break
       }
 
       case 'richText':
       case 'json': {
-        targetTable[fieldName] = jsonb(columnName)
+        targetTable[fieldName] = jsonb(columnName).default(field.defaultValue)
         break
       }
 
@@ -213,7 +213,7 @@ export const traverseFields = ({
           mode: 'string',
           precision: 3,
           withTimezone: true,
-        })
+        }).default(field.defaultValue)
         break
       }
 
